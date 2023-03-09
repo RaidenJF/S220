@@ -369,7 +369,7 @@ addition of text that many students can probably relate to.</p>
 <pre class="r"><code>library(magick)
 #reading in library
 
-left=image_read(&quot;420.JPG&quot;) %&gt;%
+left=image_read(&quot;partB1.JPG&quot;) %&gt;%
   image_scale(400)
 #reading in image(s)
 
@@ -401,6 +401,29 @@ pinguvector %&gt;%
 <p>The animation I created is simply of albums from the band ‘Massive
 Attack’, listed in descending order of preference.</p>
 <p><a href="animation.gif">Animation link</a></p>
+<pre class="r"><code>library(magick)
+#loading in library
+
+frame1=image_read(&quot;partC1.JPG&quot;) %&gt;%
+  image_scale(200)
+frame2=image_read(&quot;partC2.JPG&quot;) %&gt;%
+  image_scale(200)
+frame3=image_read(&quot;partC3.JPG&quot;) %&gt;%
+  image_scale(200)
+frame4=image_read(&quot;partC4.JPG&quot;) %&gt;%
+  image_scale(200)
+#reading in images and rescaling
+
+frames=c(frame1, frame2, frame3, frame4)
+#creating vector of images
+
+animation=frames %&gt;%
+  image_animate(fps = 1)
+#creating animation 
+
+animation %&gt;%
+  image_write(&quot;animation.gif&quot;)
+#saving animation</code></pre>
 <pre class="css"><code>
 body {padding: 7.5px; color: #CD5C5C; background-color: #FEFDFC}
 </code></pre>
